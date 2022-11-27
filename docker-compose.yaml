@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  frontend:
+    build:
+      context: .
+    container_name: frontend
+    environment:
+      - ENV=${ENV}
+    volumes:
+    - ./src:/app/src
+    ports:
+      - "3000:3000"
+      # nuxt hmr
+      - "24678:24678"
+      
